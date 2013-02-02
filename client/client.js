@@ -1,3 +1,8 @@
+Meteor.autosubscribe(function (){
+  Meteor.subscribe("user-data", Meteor.userId())  
+})
+
+
 //set the tab-pane class to "active" when its contents display
 
 Template.gradientMenu.helpers({
@@ -53,8 +58,8 @@ Template.topbar.events({
 });
 Template.testButtons.events({
   'click .addData' : function(){
-    
-    Meteor.call("fillDBWithTestData");
+
+    Meteor.call("fillDBWithTestData", Meteor.userId());
   },
   'click .deleteData' : function(){
     Meteor.call("deleteDB");
