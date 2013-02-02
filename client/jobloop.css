@@ -117,8 +117,8 @@ td{
 
 .applicationSummary h3, .applicationSummary h4{
 	display: inline;
-	font-family: "Raleway 600";
-	font-size: 110%;
+	font-family: "Raleway";
+	font-size: 125%;
 }
 
 .sortSelect{
