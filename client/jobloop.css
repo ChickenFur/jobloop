@@ -5,6 +5,8 @@ body{
 	background-color: #f2f2f2;
 	margin:0;
 	padding:0;
+	color:#666;
+	font-size: 14px;
 }
 
 a{
@@ -30,6 +32,24 @@ h1, h2, h3, h4{
 	display:inline;
 	padding:7px;
 	margin-left:3px;
+}
+
+.icon-3x{
+	background-color: #fff
+	width:58px;
+}
+
+.bannerTable{
+	width:80%;
+	margin: 0 auto;
+	font-size: 180%;
+	background-color: rgba(255, 255, 255, 0.4);
+	line-height: 120%;
+	padding:3px;
+}
+
+td{
+	padding: 15px;
 }
 
 .navbar .nav {
@@ -70,7 +90,6 @@ h1, h2, h3, h4{
 .appSort, .appHeading{
 	padding: 0 15px;
 	clear: both;
-	overflow: hidden;
 }
 
 .appSort{
@@ -84,17 +103,19 @@ h1, h2, h3, h4{
 }
 
 .appHeading{
-	float:left;
+	text-align: center;
 	padding-left:0;
 }
 
 .appHeading h4{
-	font-family: "Raleway 600";
-	font-size:170%;
+	font-family: "Raleway";
+	font-size:180%;
 }
 
 .applicationSummary h3, .applicationSummary h4{
 	display: inline;
+	font-family: "Raleway 600";
+	font-size: 110%;
 }
 
 .sortSelect{
@@ -102,8 +123,7 @@ h1, h2, h3, h4{
 }
 
 .banner{
-	background-color: #d7e6a6;
-	height:150px;
+	height:250px;
 	box-shadow: inset 0px 0px 15px #ccc;
 	padding: 15px;
 	font-family: "Raleway";
@@ -113,6 +133,7 @@ h1, h2, h3, h4{
 	color:#fff;
 	font-size: 200%;
 }
+
 
 #footer{
 	margin:0;
