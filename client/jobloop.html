@@ -12,11 +12,7 @@
   {{> homeHeader}}
 
   <div class="container">
-  	<div class="row-fluid">
-	  <div class="span11">
-	  {{> testButtons}}
-	  </div>
-	 </div>
+  	{{> testButtons}}
 	<div class="row-fluid">
 	  	  
 	  <div class="span12">
@@ -37,53 +33,68 @@
 	    	</table>
 	    </div>
 	    <div class="row-fluid">
-
-	    	<div class="appSort">
-	    	    <div class="appHeading">
-	    	    	<h4>Open Applications</h4>
-	    	    </div>
-			</div>
-
 	    	<div class="row-fluid appRow">
+	    		{{> topbar}}
+	    		<div class="appHeading">
+				  <h4>Open Applications</h4>
+				</div>
 	    		{{> applications}}
             </div>
-
 	    </div>
 	  </div>
 	</div>
+  </div>
+  {{> homeFooter}}
+</template>
 
-	{{> homeFooter}}
-
+<template name="calltoAction">
+  <div class="calltoAction">
+  	<div>
+  		<h2>You haven't added any jobs yet!</h2>
+  		<h4>Start tracking your progress now - add the latest position you're working toward and attach hiring team contact info, company research notes, appointment reminders, and more!</h4>
+  	</div>
+	<button class="btn btn-large btn-block" type="button">Add a Job to Track!</button>
   </div>
 </template>
 
 <template name="applications">
-	<div class="applicationSummary">
-		<h4>Job Company Lala - Job Title 2</h4>
-		<p>This is where the application notes will go.</p>
-	</div>
+	
+	  {{#each Applications}}
+	  <div class="applicationSummary">
+	  	<div class="tabbable">
+		  <ul class="nav nav-tabs">
+		    <li class="active companyTab"><a href="#tab0" data-toggle="tab">Company</a></li>
+		    <li><a href="#tab1" data-toggle="tab">Application</a></li>
+		    <li><a href="#tab2" data-toggle="tab">Contact</a></li>
+		    <li><a href="#tab3" data-toggle="tab">Screen</a></li>
+		    <li><a href="#tab4" data-toggle="tab">Interviews</a></li>
+		    <li><a href="#tab5" data-toggle="tab">Decisions</a></li>
+		  </ul>
 
-</template>
-
-<template name="gradientMenu">
-	<div class="tabbable"> <!-- Only required for left/right tabs -->
-	  <ul class="nav nav-tabs">
-	    <li class="active"><a href="#tab1" data-toggle="tab">Application</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Contact</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Screen</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Interviews</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Decisions</a></li>
-	  </ul>
-
-	  <div class="tab-content">
-	    <div class="tab-pane active" id="tab1">
-	      <p>I'm in Section 1.</p>
-	    </div>
-	    <div class="tab-pane" id="tab2">
-	      <p>Howdy, I'm in Section 2.</p>
+		  <div class="tab-content">
+		  	<div class="tab-pane active" id="tab0">
+		      <p>Company Info for {{company}}</p>
+		    </div>
+		    <div class="tab-pane" id="tab1">
+		      <p>Application Notes etc</p>
+		    </div>
+		    <div class="tab-pane" id="tab2">
+		      <p>Contact info here.</p>
+		    </div>
+		    <div class="tab-pane" id="tab3">
+		      <p>Screens and stuff.</p>
+		    </div>
+		    <div class="tab-pane" id="tab4">
+		      <p>Interviewing stuff here.</p>
+		    </div>
+		    <div class="tab-pane" id="tab5">
+		      <p>Decisions on offers, and rejections.</p>
+		    </div>
+		  </div>
 	    </div>
 	  </div>
-	</div>
+	  {{/each}}
+	
 </template>
 
 <template name="topbar">
@@ -120,14 +131,21 @@
 </template>
 
 <template name="testButtons">
-  <button class="addData btn btn-small btn-primary">AddTestData
-  </button>
-  <button class="deleteData btn btn-small">DeleteTestData
-  </button>
+  <div class="row-fluid">
+	  <div class="span11">
+		  <button class="addData btn btn-small">AddTestData
+		  </button>
+		  <button class="deleteData btn btn-small">DeleteTestData
+		  </button>
+	  </div>
+	 </div>
+
+  
 </template>
 
 <template name="homeFooter">
 	<div id="footer">
+		footer stuff
 	</div>
 </template>
 

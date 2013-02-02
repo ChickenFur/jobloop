@@ -5,7 +5,7 @@ Meteor.autosubscribe(function (){
 
 //set the tab-pane class to "active" when its contents display
 
-Template.gradientMenu.helpers({
+Template.applications.helpers({
   application : function(){
     return "this is an application";
   },
@@ -27,7 +27,7 @@ Template.gradientMenu.helpers({
   } 
 });
 
-Template.gradientMenu.events({
+Template.applications.events({
   'click .tab-pane': function(){
 
   }
@@ -66,6 +66,28 @@ Template.testButtons.events({
   }
 });
 
+Template.applications.Applications = function(){
+  if(JobLoopUsers.findOne()){
+    return JobLoopUsers.findOne().Applications;
+    };
+};
+
+
+//this is the template logic for the front page.
+//paste it under row-fluid appRow.
+// {{> calltoAction}}
+//           {{#if currentUser}}
+//             {{> topbar}}
+//             <div class="appHeading">
+//             <h4>Open Applications</h4>
+//           </div>
+//             {{> applications}}
+//           {{/if}}
+
+// <h4>Job Company Lala - Job Title 2</h4>
+//     <div class="applicationNotes">
+//       <p>This is where the application notes will go.</p>
+//       </div>
 
 
 
