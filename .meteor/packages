@@ -8,3 +8,7 @@ insecure
 preserve-inputs
 accounts-ui
 coffeescript
+router
+bootstrap
+jquery-ui-bootstrap
+font-awesome
