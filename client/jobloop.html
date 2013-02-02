@@ -58,31 +58,43 @@
 </template>
 
 <template name="applications">
-	<div class="applicationSummary">
-		<h4>Job Company Lala - Job Title 2</h4>
-		<p>This is where the application notes will go.</p>
-	</div>
-</template>
+	
+	  {{#each Applications}}
+	  <div class="applicationSummary">
+	  	<div class="tabbable">
+		  <ul class="nav nav-tabs">
+		    <li class="active companyTab"><a href="#tab0" data-toggle="tab">Company</a></li>
+		    <li><a href="#tab1" data-toggle="tab">Application</a></li>
+		    <li><a href="#tab2" data-toggle="tab">Contact</a></li>
+		    <li><a href="#tab3" data-toggle="tab">Screen</a></li>
+		    <li><a href="#tab4" data-toggle="tab">Interviews</a></li>
+		    <li><a href="#tab5" data-toggle="tab">Decisions</a></li>
+		  </ul>
 
-<template name="gradientMenu">
-	<div class="tabbable"> <!-- Only required for left/right tabs -->
-	  <ul class="nav nav-tabs">
-	    <li class="active"><a href="#tab1" data-toggle="tab">Application</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Contact</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Screen</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Interviews</a></li>
-	    <li><a href="#tab2" data-toggle="tab">Decisions</a></li>
-	  </ul>
-
-	  <div class="tab-content">
-	    <div class="tab-pane active" id="tab1">
-	      <p>I'm in Section 1.</p>
-	    </div>
-	    <div class="tab-pane" id="tab2">
-	      <p>Howdy, I'm in Section 2.</p>
+		  <div class="tab-content">
+		  	<div class="tab-pane active" id="tab0">
+		      <p>Company Info from DNB here.</p>
+		    </div>
+		    <div class="tab-pane" id="tab1">
+		      <p>Application Notes etc</p>
+		    </div>
+		    <div class="tab-pane" id="tab2">
+		      <p>Contact info here.</p>
+		    </div>
+		    <div class="tab-pane" id="tab3">
+		      <p>Screens and stuff.</p>
+		    </div>
+		    <div class="tab-pane" id="tab4">
+		      <p>Interviewing stuff here.</p>
+		    </div>
+		    <div class="tab-pane" id="tab5">
+		      <p>Decisions on offers, and rejections.</p>
+		    </div>
+		  </div>
 	    </div>
 	  </div>
-	</div>
+	  {{/each}}
+	
 </template>
 
 <template name="topbar">

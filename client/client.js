@@ -1,6 +1,6 @@
 //set the tab-pane class to "active" when its contents display
 
-Template.gradientMenu.helpers({
+Template.applications.helpers({
   application : function(){
     return "this is an application";
   },
@@ -22,7 +22,7 @@ Template.gradientMenu.helpers({
   } 
 });
 
-Template.gradientMenu.events({
+Template.applications.events({
   'click .tab-pane': function(){
 
   }
@@ -60,6 +60,11 @@ Template.testButtons.events({
   }
 });
 
+Template.applications.Applications = function(){
+    console.log(JobLoopUsers.find({},{Applications: 1}).fetch());
+    return JobLoopUsers.find({},{Applications: 1}).fetch();
+};
+
 
 //this is the template logic for the front page.
 //paste it under row-fluid appRow.
@@ -71,6 +76,11 @@ Template.testButtons.events({
 //           </div>
 //             {{> applications}}
 //           {{/if}}
+
+// <h4>Job Company Lala - Job Title 2</h4>
+//     <div class="applicationNotes">
+//       <p>This is where the application notes will go.</p>
+//       </div>
 
 
 
