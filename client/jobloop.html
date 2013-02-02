@@ -12,11 +12,7 @@
   {{> homeHeader}}
 
   <div class="container">
-  	<div class="row-fluid">
-	  <div class="span11">
-	  {{> testButtons}}
-	  </div>
-	 </div>
+  	{{> testButtons}}
 	<div class="row-fluid">
 	  	  
 	  <div class="span12">
@@ -39,14 +35,13 @@
 	    <div class="row-fluid">
 	    	<div class="row-fluid appRow">
 	    		{{> calltoAction}}
-	    		{{> topbar}}
-	    		<div class="appHeading">
-				  <h4>Open Applications</h4>
-				</div>
-	    		{{> applications}}
-	    		{{> applications}}
-	    		{{> applications}}
-	    		{{> applications}}
+	    		{{#if currentUser}}
+		    		{{> topbar}}
+		    		<div class="appHeading">
+					  <h4>Open Applications</h4>
+					</div>
+		    		{{> applications}}
+		    	{{/if}}
             </div>
 	    </div>
 	  </div>
@@ -127,10 +122,16 @@
 </template>
 
 <template name="testButtons">
-  <button class="addData btn btn-small">AddTestData
-  </button>
-  <button class="deleteData btn btn-small">DeleteTestData
-  </button>
+  <div class="row-fluid">
+	  <div class="span11">
+		  <button class="addData btn btn-small">AddTestData
+		  </button>
+		  <button class="deleteData btn btn-small">DeleteTestData
+		  </button>
+	  </div>
+	 </div>
+
+  
 </template>
 
 <template name="homeFooter">

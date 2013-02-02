@@ -50,7 +50,7 @@ h1, h2, h3, h4{
 .calltoAction{
 	clear: both;
 	width: 50%;
-	margin: 30px auto;
+	margin: 30px auto 100px;
 	background-color: rgba(173,210,216,0.4);
 	padding: 30px;
 	border-radius: 8px;
