@@ -61,5 +61,16 @@ Template.testButtons.events({
 });
 
 
+//this is the template logic for the front page.
+//paste it under row-fluid appRow.
+// {{> calltoAction}}
+//           {{#if currentUser}}
+//             {{> topbar}}
+//             <div class="appHeading">
+//             <h4>Open Applications</h4>
+//           </div>
+//             {{> applications}}
+//           {{/if}}
+
 
 
