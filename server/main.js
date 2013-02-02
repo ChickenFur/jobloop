@@ -1,3 +1,7 @@
+Meteor.publish("user-data", function(userId){
+  return JobLoopUsers.find({meteorUserId: userId})
+})
+
 Meteor.methods({
   addUser : function(){
     //todo write add user function
@@ -8,7 +12,7 @@ Meteor.methods({
   },
   fillDBWithTestData : function(userId) {
     console.log("fillDBWithTestData was called.");
-    TestFunctions.insertTestData(this.userId)
+    TestFunctions.insertTestData(userId)
     console.log(JobLoopUsers.find().fetch()[0])
   },
   deleteDB : function(){
