@@ -51,7 +51,7 @@ Template.topbar.events({
     
   }
 });
-Template.homeHeader.events({
+Template.testButtons.events({
   'click .addData' : function(){
     Meteor.call("fillDBWithTestData");
   },

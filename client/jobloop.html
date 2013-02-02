@@ -37,23 +37,31 @@
 	    	</table>
 	    </div>
 	    <div class="row-fluid">
-
-	    	<div class="appSort">
-	    	    <div class="appHeading">
-	    	    	<h4>Open Applications</h4>
-	    	    </div>
-			</div>
-
 	    	<div class="row-fluid appRow">
+	    		{{> calltoAction}}
+	    		{{> topbar}}
+	    		<div class="appHeading">
+				  <h4>Open Applications</h4>
+				</div>
+	    		{{> applications}}
+	    		{{> applications}}
+	    		{{> applications}}
 	    		{{> applications}}
             </div>
-
 	    </div>
 	  </div>
 	</div>
+  </div>
+  {{> homeFooter}}
+</template>
 
-	{{> homeFooter}}
-
+<template name="calltoAction">
+  <div class="calltoAction">
+  	<div>
+  		<h2>You haven't added any jobs yet!</h2>
+  		<h4>Start tracking your progress now - add the latest position you're working toward and attach hiring team contact info, company research notes, appointment reminders, and more!</h4>
+  	</div>
+	<button class="btn btn-large btn-block" type="button">Add a Job to Track!</button>
   </div>
 </template>
 
@@ -62,7 +70,6 @@
 		<h4>Job Company Lala - Job Title 2</h4>
 		<p>This is where the application notes will go.</p>
 	</div>
-
 </template>
 
 <template name="gradientMenu">
@@ -120,7 +127,7 @@
 </template>
 
 <template name="testButtons">
-  <button class="addData btn btn-small btn-primary">AddTestData
+  <button class="addData btn btn-small">AddTestData
   </button>
   <button class="deleteData btn btn-small">DeleteTestData
   </button>
@@ -128,6 +135,7 @@
 
 <template name="homeFooter">
 	<div id="footer">
+		footer stuff
 	</div>
 </template>
 
