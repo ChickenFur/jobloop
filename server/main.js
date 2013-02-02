@@ -1,7 +1,3 @@
-Meteor.publish("user-data", function(){
-  JobLoopUsers.find({});
-});
-
 Meteor.methods({
   addUser : function(){
     //todo write add user function
