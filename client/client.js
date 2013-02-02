@@ -67,8 +67,9 @@ Template.testButtons.events({
 });
 
 Template.applications.Applications = function(){
-    console.log(JobLoopUsers.find({},{Applications: 1}).fetch());
-    return JobLoopUsers.find({},{Applications: 1}).fetch();
+  if(JobLoopUsers.findOne()){
+    return JobLoopUsers.findOne().Applications;
+    };
 };
 
 
