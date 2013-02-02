@@ -1,1 +1,187 @@
 /* CSS declarations go here */
+body{
+	width: 100%;
+	height:100%;
+	background-color: #f2f2f2;
+	margin:0;
+	padding:0;
+}
+
+a{
+	color:#777;
+}
+
+#header{
+	margin:0;
+	height:135px;
+	padding:10px;
+}
+
+h1, h2, h3, h4{
+	font-family: "Raleway";
+}
+
+.logos{
+	float: left;
+	font-family: "Raleway"
+}
+
+.logos h3, .nav p{
+	display:inline;
+	padding:7px;
+	margin-left:3px;
+}
+
+.navbar .nav {
+  position: relative;
+  right: 0;
+  display: block;
+  float: right;
+  margin: 0 10px 0 0;
+}
+
+.topSpan{
+	padding: 15px;
+	padding-top: 30px;
+}
+
+.topbarBox{
+	position: relative;
+	padding: 39px 19px 14px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 125%;
+	height:200px;
+	width:250px;
+}
+
+.topbarBox ul{
+	margin:0;
+	list-style-type: none;
+}
+
+.topbarBox li{
+	height:30px;
+}
+
+.appRow{
+	margin-top:20px;
+}
+
+.appSort, .appHeading{
+	padding: 0 15px;
+	clear: both;
+	overflow: hidden;
+}
+
+.appSort{
+	height:30px;
+	padding-top:40px;
+}
+
+.appSort p{
+	margin:0;
+	padding:0;
+}
+
+.appHeading{
+	float:left;
+	padding-left:0;
+}
+
+.appHeading h4{
+	font-family: "Raleway 600";
+	font-size:170%;
+}
+
+.sortSelect{
+	float:right;
+}
+
+.banner{
+	background-color: #d7e6a6;
+	height:150px;
+	box-shadow: inset 0px 0px 15px #ccc;
+	padding: 15px;
+	font-family: "Raleway";
+}
+
+.banner p{
+	color:#fff;
+	font-size: 200%;
+}
+
+#footer{
+	margin:0;
+	height:175px;
+	padding:10px;
+	bottom:0;
+	overflow: hidden;
+	clear:both;
+}
+
+#header h1{
+	margin: 0;
+	font-size: 200%;
+	text-align: center;
+}
+
+#header img{
+	margin: 0 auto;
+}
+
+.container{
+	width:940px;
+	margin:15px auto;
+	height:100%;
+	background-color: #fff;
+	box-shadow: 0 0 15px rgba(0,0,0,0.13);
+}
+
+.row-fluid{
+	background-color: #fff;
+}
+
+.span12{
+	margin:0;
+	width:100%;
+}
+
+.span2{
+
+}
+
+.span9{
+
+}
+
+.badge-important{
+	margin-left:5px;
+}
+
+.gradients{
+	padding:0;
+	margin:0;
+	background-color: #fff;
+}
+
+.applicationSummary{
+	height:150px;
+	overflow: hidden;
+	padding: 10px;
+	background-color: #f5f5f5;
+	border: 1px solid #ddd;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 125%;
+	margin:15px;
+	margin-bottom:30px;
+}
+
+.gradientMenu{
+	position: absolute;
+}

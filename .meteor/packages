@@ -6,3 +6,7 @@
 autopublish
 insecure
 preserve-inputs
+router
+bootstrap
+jquery-ui-bootstrap
+font-awesome
