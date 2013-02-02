@@ -67,10 +67,6 @@ h1, h2, h3, h4{
 	height:30px;
 }
 
-.appRow{
-	margin-top:20px;
-}
-
 .appSort, .appHeading{
 	padding: 0 15px;
 	clear: both;
@@ -95,6 +91,10 @@ h1, h2, h3, h4{
 .appHeading h4{
 	font-family: "Raleway 600";
 	font-size:170%;
+}
+
+.applicationSummary h3, .applicationSummary h4{
+	display: inline;
 }
 
 .sortSelect{
