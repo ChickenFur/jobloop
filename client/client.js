@@ -100,31 +100,3 @@ Template.applications.Applications = function(){
     return appsArray.reverse();
     };
 };
-
-// User account page template
-
-Template.account.username = function(){
-  return Meteor.user().profile.name;
-};
-
-Template.account.events({
-  'click .upload-resume': function(evt){
-    filepicker.pick({
-      extensions: ['.doc*', '.DOC*','.pdf', '.PDF'],
-      container: 'window',
-      services:['COMPUTER', 'GMAIL', 'BOX', 'DROPBOX', 'FTP', 'GOOGLE_DRIVE', 'GITHUB', 'URL']
-      },
-      function(FPFile){
-        // console.log(JSON.stringify(FPFile));
-        var url = FPFile.url;
-        var filename = FPFile.filename;
-        var user = JobLoopUsers.findOne();
-        user.resume = url;
-      },
-      function(FPError){
-        console.log(FPError.toString());
-      }
-    );
-  }
-});
-
