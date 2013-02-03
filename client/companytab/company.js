@@ -4,7 +4,6 @@ DnB = {
 
   }
 }
-
 Template.company.events = ({
   "click .editCompany" : function (event, template){
    
