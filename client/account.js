@@ -10,8 +10,8 @@ Template.account.resume = function(){
 Template.account.events({
   'click .upload-resume': function(evt){
     filepicker.pick({
-      mimetypes: ['text/plain'],
-      // extensions: ['.doc*', '.DOC*','.pdf', '.PDF'],
+      //mimetypes: ['text/plain'],
+       extensions: ['.doc*', '.DOC*','.pdf', '.PDF'],
       container: 'modal',
       services:['COMPUTER', 'GMAIL', 'BOX', 'DROPBOX', 'FTP', 'GOOGLE_DRIVE', 'GITHUB', 'URL']
       },
