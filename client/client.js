@@ -92,6 +92,7 @@ Template.applications.Applications = function(){
     };
 };
 
+<<<<<<< HEAD
 // User account page template
 
 Template.account.username = function(){

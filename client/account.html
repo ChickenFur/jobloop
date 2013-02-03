@@ -1,5 +1,10 @@
 <template name="account">
   {{> homeHeader}}
-  <p class="user-name">{{username}}</p>
-  <button id="resume-button" class="upload-resume">Upload Resume</button>
+  <div class="account">
+    <p class="user-name">{{username}}</p>
+    {{#if resume}}
+      <p><a href={{resume}}>Click to view your current resume</a></p>
+    {{/if}}
+    <button id="resume-button" class="upload-resume">Upload Resume</button>
+  </div>
 </template>

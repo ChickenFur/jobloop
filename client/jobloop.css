@@ -13,6 +13,10 @@ a{
 	color:#777;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 #header{
 	margin:0;
 	height:135px;
@@ -265,4 +269,8 @@ td{
 
 .gradientMenu{
 	position: absolute;
+}
+
+.account {
+	margin-left: 20px;
 }

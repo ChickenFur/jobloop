@@ -13,9 +13,6 @@ Meteor.methods({
     //todo write add user function
     console.log("user added");
   },
-  getCompanyNames : function (){
-    console.log("Getting Company Names");
-  },
   fillDBWithTestData : function(userId) {
     TestFunctions.insertTestData(userId)
     console.log(JobLoopUsers.find().fetch()[0])
@@ -27,7 +24,7 @@ Meteor.methods({
   },
   getCompanyNames : function(name){
     console.log("Getting Company Data");
-    var url = "http://dnbdirect-sandbox.dnb.com/DnBAPI-13/rest/search/company/"+company;
+    var url = "http://dnbdirect-sandbox.dnb.com/DnBAPI-13/rest/search/company/"+name;
     var header ={
       'Accept' : 'application/json',
       'Content-type' : 'application/json',
@@ -39,8 +36,23 @@ Meteor.methods({
       headers: header,
       dataType: "jsonp"
     }
-    results = Meteor.http.get(url, options).content
-    console.log("Results: ", results );
+    var results = Meteor.http.get(url, options).content
+    return results;
+  },
+  getCompanyData : function (id){
+    var url = "http://dnbdirect-sandbox.dnb.com/DnBAPI-13/rest/company/"+id;
+    var header ={
+      'Accept' : 'application/json',
+      'Content-type' : 'application/json',
+      'API-KEY' : '5p83tw3zsmupe48wdgq5dz8a',
+      'username' : 'sandboxAPI',
+      'password' : 'DnBD1rect'
+      }
+    var options={
+      headers: header,
+      dataType: "jsonp"
+    }
+    var results = Meteor.http.get(url, options).content
     return results;
   }
 });

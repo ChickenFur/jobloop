@@ -1,6 +1,18 @@
 <template name="company">
   <div class="companyContainer">
-  	<span class="companyTitle">Company Name: <label class="companyNameLabel">{{company}}</label></span>
+  	<span class="companyTitle"><label class="companyNameLabel">
+    {{#unless companyData.name}}
+      {{company}}
+    {{/unless}}
+
+    </label></span>
+    <div><span class="company-data">{{companyData.name}}</span></div>
+    <div>PhoneNumber: <span class="company-data">{{companyData.phone}}</span></div>
+    <div>Website: <a href={{companyData.url}}><span class="company-data">{{companyData.url}}</span></a></div>
+    <div>Address: <span class="company-data">{{companyData.address}}</span></div>
+    <div>Assets: <span class="company-data">{{companyData.assets}}</span></div>
+    <div>Most Recent Revenue Report: <span class="company-data">{{companyData.income}}</span></div>
+    <div>Year Founded: <span class="company-data">{{companyData.yearFounded}}</span></div>
   <label class="hiddenItem appIdLabel">{{appID}}</label>
   <div>
     <button class="saveCompany btn btn-small hiddenItem">Save
