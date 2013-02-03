@@ -36,5 +36,5 @@ Meteor.methods({
         results = Meteor.http.get(url, options).content
         console.log("Results: ", results );
         return results;
-      }   
+  }
 });
