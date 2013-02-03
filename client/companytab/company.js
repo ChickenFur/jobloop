@@ -41,7 +41,6 @@ Template.company.events = ({
     $(editButton).removeClass("hiddenItem");
 
     var currentAppId = $(template.find(".appIdLabel"))
-    debugger;
     updateApplicationName(currentAppId, $(template.find('.companyNameInput')).val())
     var currentName = template.find('.companyNameLabel'); 
     $(currentName).contentText = $(template.find('.companyNameInput')).val()
