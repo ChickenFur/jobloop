@@ -10,18 +10,27 @@ Template.home.events({
   'click .icon-plus-sign': function(){
     //create a new record in the collection.
     var appID = function(){
-      var lastID = _.last(JobLoopUsers.find().fetch()[0].Applications);
-      return lastID.appID + 1;
+      if(JobLoopUsers.findOne()){
+        var lastID = _.last(JobLoopUsers.find().fetch()[0].Applications)
+          return lastID.appID + 1;
+      }else{
+        return 12345;
+      }
     };
     
     var user = JobLoopUsers.findOne();
-    console.log(user);
-    var newArray = user.Applications;
-    console.log(newArray);
-    newArray.push({appID: appID()});
-    console.log(newArray);
+    if(user)
+    {
+      var newArray = user.Applications;
+      newArray.push({appID: appID()});
+      JobLoopUsers.update({meteorUserId: Meteor.userId()},{$set: {Applications:newArray}});
+    }else{
+      var user = {meteorUserId: Meteor.userId()}
+      user.Applications = [];
+      user.Applications.push({appID: appID()});
+      JobLoopUsers.insert(user);
+    }
 
-    JobLoopUsers.update({meteorUserId: Meteor.userId()},{$set: {Applications:newArray}});
   }
 });
 

@@ -5,6 +5,12 @@ Meteor.publish("user-data", function(userId){
 JobLoopUsers.allow({
   update: function(userId){
     return userId === userId;
+  },
+  insert: function (){
+    return true;
+  },
+  remove: function(){
+    return true;
   }
 });
 
