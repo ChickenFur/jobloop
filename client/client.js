@@ -72,23 +72,6 @@ Template.applications.Applications = function(){
     };
 };
 
-
-//this is the template logic for the front page.
-//paste it under row-fluid appRow.
-// {{> calltoAction}}
-//           {{#if currentUser}}
-//             {{> topbar}}
-//             <div class="appHeading">
-//             <h4>Open Applications</h4>
-//           </div>
-//             {{> applications}}
-//           {{/if}}
-
-// <h4>Job Company Lala - Job Title 2</h4>
-//     <div class="applicationNotes">
-//       <p>This is where the application notes will go.</p>
-//       </div>
-
 // User account page template
 
 Template.account.username = function(){

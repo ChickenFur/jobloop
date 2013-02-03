@@ -35,11 +35,17 @@
 	    </div>
 	    <div class="row-fluid">
 	    	<div class="row-fluid appRow">
-	    		{{> topbar}}
-	    		<div class="appHeading">
-				  <h4>Open Applications</h4>
-				</div>
-	    		{{> applications}}
+		          {{#if currentUser}}
+		            {{> topbar}}
+		            <div class="appHeading">
+		            <h4>Open Applications</h4>
+		            <i class="icon-plus-sign right icon-2x"></i>
+		            </div>
+		            {{> applications}}
+		            {{/if}}
+		            {{#unless currentUser}}
+		          	  {{> calltoAction}}
+		            {{/unless}}
             </div>
 	    </div>
 	  </div>
