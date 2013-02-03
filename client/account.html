@@ -1,5 +1,8 @@
 <template name="account">
   {{> homeHeader}}
   <p class="user-name">{{username}}</p>
+  {{#if resume}}
+    <p><a href={{resume}}>Your current resume</a></p>
+  {{/if}}
   <button id="resume-button" class="upload-resume">Upload Resume</button>
 </template>
