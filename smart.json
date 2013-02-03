@@ -6,6 +6,7 @@
   "packages": {
     "router": {},
     "jquery-ui-bootstrap": {},
-    "font-awesome": {}
+    "font-awesome": {},
+    "filepicker": {}
   }
 }

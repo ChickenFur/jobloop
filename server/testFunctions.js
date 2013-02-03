@@ -13,7 +13,7 @@ TestFunctions = {
           {title: "Note 2",
            content: "Anytime I see something screech across a room and latch onto someone's neck, and the guy screams and tries to get it off, I have to laugh, because what is that thing."},
           {title: "Note3",
-           content: "To me, clowns aren't funny. In fact, they're kind of scary. I've wondered where this started and I think it goes back to the time I went to the circus, and a clown killed my dad."},]
+           content: "To me, clowns aren't funny. In fact, they're kind of scary. I've wondered where this started and I think it goes back to the time I went to the circus, and a clown killed my dad."}]
       },
       { appID : 2345678,
         company : "Microsoft",

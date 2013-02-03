@@ -8,7 +8,8 @@
     "basePackages": {
       "router": {},
       "jquery-ui-bootstrap": {},
-      "font-awesome": {}
+      "font-awesome": {},
+      "filepicker": {}
     },
     "packages": {
       "router": {
@@ -25,6 +26,11 @@
         "git": "https://github.com/nate-strauser/meteor-font-awesome.git",
         "tag": "v0.1.2",
         "commit": "f68badb67341b4a4c83d7f449a4e985613ff63d5"
+      },
+      "filepicker": {
+        "git": "https://github.com/Filepicker/meteor.git",
+        "tag": "v0.2.0",
+        "commit": "1ae688ad1abfbe6777c465e11a0d5287ad9e4d4a"
       },
       "page-js": {
         "git": "https://github.com/tmeasday/meteor-page-js.git",
