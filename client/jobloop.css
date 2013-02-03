@@ -71,6 +71,8 @@ td{
 
 .icon-plus-sign{
 	display:inline;
+	padding:22px;
+	color:#fff;
 }
 
 .navbar .nav {
@@ -102,7 +104,7 @@ td{
 
 .topbarBox{
 	position: relative;
-	padding: 39px 19px 14px;
+	padding: 15px 19px 14px;
 	background-color: #fff;
 	border: 1px solid #ddd;
 	-webkit-border-radius: 4px;
@@ -118,12 +120,15 @@ td{
 	list-style-type: none;
 }
 
+.topbarBox h3{
+	margin:0;
+}
+
 .topbarBox li{
 	height:30px;
 }
 
 .appSort, .appHeading{
-	padding: 0 15px;
 	clear: both;
 }
 
@@ -146,6 +151,9 @@ td{
 .appHeading h4{
 	font-family: "Raleway";
 	font-size:180%;
+	color: #fff;
+	background-color: #555;
+	padding: 15px;
 }
 
 .applicationSummary h3, .applicationSummary h4{
@@ -182,7 +190,7 @@ td{
 	bottom:0;
 	overflow: hidden;
 	clear:both;
-	background-color: #666;
+	background-color: #555;
 	color:#f5f5f5;
 }
 

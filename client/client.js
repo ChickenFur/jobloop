@@ -87,7 +87,8 @@ Template.testButtons.events({
 
 Template.applications.Applications = function(){
   if(JobLoopUsers.findOne()){
-    return JobLoopUsers.findOne().Applications;
+    var appsArray = JobLoopUsers.findOne().Applications;
+    return appsArray.reverse();
     };
 };
 

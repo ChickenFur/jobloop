@@ -38,8 +38,8 @@
 		          {{#if currentUser}}
 		            {{> topbar}}
 		            <div class="appHeading">
+	            	<i class="icon-plus-sign right icon-2x"></i>
 		            <h4>Open Applications</h4>
-		            <i class="icon-plus-sign right icon-2x"></i>
 		            </div>
 		            {{> applications}}
 		            {{/if}}
@@ -105,16 +105,22 @@
 <template name="topbar">
 	<div class="span12 topSpan">
 		<div class="span6 topbarBox" id="toDoTopbar">
+			<h3>To Do</h3>
 			<ul>
-			  <li><a tabindex="-1" href="#">Action</a></li>
-			  <li><a tabindex="-1" href="#">Another action</a></li>
-			  <li><a tabindex="-1" href="#">Something else here</a></li>
+				<li><i class="icon-ok"></i>stuff</li>
+				<li><i class="icon-ok"></i>stuff</li>
+				<li><i class="icon-ok"></i>stuff</li>
+				<li><i class="icon-ok"></i>stuff</li>
 			</ul>
 		</div>
 
 		<div class="span6 topbarBox" id="statsTopbar">
-			<p>Stats</p>
-
+			<h3>Stats</h3>
+			<ul>
+				<li>7 phone interviews</li>
+				<li>4 second interviews</li>
+				<li>12 jobs applied for</li>
+			</ul>
 		</div>
 	</div>
 </template>
