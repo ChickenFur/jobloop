@@ -66,7 +66,6 @@
 		    <li class="active companyTab"><a href="#tab{{appID}}A" data-toggle="tab">Company</a></li>
 		    <li><a href="#tab{{appID}}B" data-toggle="tab">Application</a></li>
 		    <li><a href="#tab{{appID}}C" data-toggle="tab">Contact</a></li>
-		    <li><a href="#tab{{appID}}D" data-toggle="tab">Screen</a></li>
 		    <li><a href="#tab{{appID}}E" data-toggle="tab">Interviews</a></li>
 		    <li><a href="#tab{{appID}}F" data-toggle="tab">Decisions</a></li>
 		  </ul>
@@ -75,16 +74,13 @@
 		  	<div class="tab-pane active" id="tab{{appID}}A">
 		  		{{> company}}
 		    </div>
-		    <div class="tab-pane" id="tab{{appID}}B">
+		    <div class="tab-pane appNotes" id="tab{{appID}}B">
 		      {{#each applicationNotes}}
 		      <p>{{content}}</p>
 		      {{/each}}
 		    </div>
 		    <div class="tab-pane" id="tab{{appID}}C">
 		      <p>Contact info here.</p>
-		    </div>
-		    <div class="tab-pane" id="tab{{appID}}D">
-		      <p>Screens and stuff.</p>
 		    </div>
 		    <div class="tab-pane" id="tab{{appID}}E">
 		      <p>Interviewing stuff here.</p>

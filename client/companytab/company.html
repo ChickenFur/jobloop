@@ -1,9 +1,9 @@
 <template name="company">
-  <div>
-    <button class="editCompany btn btn-small">Edit
-    </button>
+  <div class="companyContainer">
+  	<span class="companyTitle">Company Name : {{company}}</span>
     <button class="saveCompany btn btn-small hiddenItem">Save
     </button>
-    <p>Company Name :<label class="companyNameLabel">{{company}}</label></p>
+    <button class="editCompany btn btn-small"><i class="icon-edit icon-large"></i>
+    </button>
   </div>
 </template>
