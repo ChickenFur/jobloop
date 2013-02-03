@@ -2,9 +2,6 @@ Meteor.autosubscribe(function (){
   Meteor.subscribe("user-data", Meteor.userId())  
 })
 
-
-//set the tab-pane class to "active" when its contents display
-
 Template.applications.helpers({
   application : function(){
     return "this is an application";
@@ -58,7 +55,6 @@ Template.topbar.events({
 });
 Template.testButtons.events({
   'click .addData' : function(){
-
     Meteor.call("fillDBWithTestData", Meteor.userId());
   },
   'click .deleteData' : function(){
