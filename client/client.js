@@ -6,6 +6,13 @@ Meteor.startup( function() {
   filepicker.setKey("AjKmJWkLsTMSgLKdyPJbrz");
 });
 
+Template.home.events({
+  'click .icon-plus-sign': function(){
+    alert("add a new application yay");
+    $("#appList").prepend("<p>THIS WORKS OMAGAA</p>")
+  }
+});
+
 Template.applications.helpers({
   application : function(){
     return "this is an application";
