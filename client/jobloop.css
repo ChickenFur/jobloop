@@ -81,6 +81,16 @@ td{
 	text-decoration: none;
 }
 
+.tab-pane{
+	padding:15px;
+}
+
+.tab-pane p{
+	line-height: 130%;
+	padding: 10px 0;
+	border-bottom: 2px #ddd solid;
+}
+
 .topSpan{
 	padding: 30px 15px;
 	margin: 0;

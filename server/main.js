@@ -11,7 +11,6 @@ Meteor.methods({
     console.log("Getting Company Names")
   },
   fillDBWithTestData : function(userId) {
-    console.log("fillDBWithTestData was called.");
     TestFunctions.insertTestData(userId)
     console.log(JobLoopUsers.find().fetch()[0])
   },

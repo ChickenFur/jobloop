@@ -3,9 +3,10 @@ TestFunctions = {
     JobLoopUsers.insert({
       meteorUserId: userId,
       Applications : [{
-        company : "google",
-        jobTitle : "SoftwareDev",
-        ApplicationNotes : [{
+        appID : 1234567,
+        company : "Google",
+        jobTitle : "Software Developer",
+        applicationNotes : [{
           title: "Note 1",
           content: "Before you criticize someone, you should walk a mile in their shoes. That way when you criticize them, you are a mile away from them and you have their shoes."
           },
@@ -14,8 +15,9 @@ TestFunctions = {
           {title: "Note3",
            content: "To me, clowns aren't funny. In fact, they're kind of scary. I've wondered where this started and I think it goes back to the time I went to the circus, and a clown killed my dad."},]
       },
-      { company : "Microsoft",
-        jobTitle : "SoftwareDev",
+      { appID : 2345678,
+        company : "Microsoft",
+        jobTitle : "Software Developer",
         ApplicationNotes : [{
           title: "Note 1",
           content: "Most people don't realize that large pieces of coral, which have been painted brown and attached to the skull by common wood screws, can make a child look like a deer."
@@ -33,8 +35,9 @@ TestFunctions = {
            {title: "Note7",
            content: "If I could be a bird, I'd be a Flying Purple People Eater because then people would sing about me and I could fly down and eat them because I hate that song."}]
         },
-      {company : "Twitter",
-        jobTitle : "SoftwareDev",
+      { appID : 3456789,
+        company : "Twitter",
+        jobTitle : "Software Developer",
         ApplicationNotes : [{
           title: "Note 1",
           content: "Instead of studying for finals, what about just going to the Bahamas and catching some rays? Maybe you'll flunk, but you might have flunked anyway; that's my point."
@@ -46,7 +49,9 @@ TestFunctions = {
            {title: "Note4",
            content: "To me, it's a good idea to always carry two sacks of something when you walk around. That way, if anybody says, 'Hey, can you give me a hand?' you can say, 'Sorry, got these sacks."},
            {title: "Note5",
-           content: "If you're robbing a bank and you're pants fall down, I think it's okay to laugh and to let the hostages laugh too, because, come on, life is funny."}]}]
+           content: "If you're robbing a bank and you're pants fall down, I think it's okay to laugh and to let the hostages laugh too, because, come on, life is funny.A"}]}]
+      
+
     });
   }
 }
