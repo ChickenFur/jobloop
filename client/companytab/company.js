@@ -77,8 +77,8 @@ Template.company.events = ({
           // employeeNum : resultObject.
           yearFounded : resultObject.yearFounded,
           name : resultObject.name,
-          income : resultObject.keyFinancials.incomeAssets.netIncome,
-          assets : resultObject.keyFinancials.incomeAssets.assets,
+          income : "$"+resultObject.keyFinancials.incomeAssets.netIncome + ",000,000",
+          assets : "$"+resultObject.keyFinancials.incomeAssets.assets + ",000,000",
           phone : resultObject.phones.phoneNumber[0].areaCode +
                   "-"+ resultObject.phones.phoneNumber[0].phoneNumber
         }

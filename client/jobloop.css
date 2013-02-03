@@ -274,3 +274,8 @@ td{
 .account {
 	margin-left: 20px;
 }
+
+.icon-plus-sign:hover {
+	cursor: pointer;
+
+}
