@@ -1,9 +1,3 @@
-DnB = {
-  get_data_async : function (query, callback){
-    var results = Meteor.call("getCompanyData", query)
-
-  }
-}
 var updateApplicationName = function (appId, newName){
   var userData = JobLoopUsers.findOne();
       userData.Applications.forEach(function(value, key){
@@ -13,9 +7,21 @@ var updateApplicationName = function (appId, newName){
           return;
         }
       });
-  var results = JobLoopUsers.update( {meteorUserId : this.userId},
-                      {$set : {Applications: userData.Applications }})
-  console.log("Results: ", results);
+  JobLoopUsers.update( {meteorUserId : this.userId},
+    {$set : {Applications: userData.Applications }})
+}
+var updateCompanyData = function (companyData, appId){
+
+  var userData = JobLoopUsers.findOne();
+      userData.Applications.forEach(function(value, key){
+        if(value.appID.toString() === appId){
+          value.companyData = companyData;
+          return;
+        }
+      });
+  JobLoopUsers.update( {meteorUserId : this.userId},
+    {$set : {Applications: userData.Applications }})
+
 }
 
 Template.company.events = ({
@@ -32,23 +38,39 @@ Template.company.events = ({
     $(editButton).addClass("hiddenItem");
     var saveButton = template.find('.saveCompany');
     $(saveButton).removeClass("hiddenItem");
-    $(template.find('.companyNameInput') ).typeahead({source : DnB.get_data_async})
+    //$(template.find('.companyNameInput') ).typeahead({source : DnB.get_data_async})
 
   },
   "click .saveCompany" : function (event, template){
     var saveButton = template.find('.saveCompany');
     $(saveButton).addClass("hiddenItem");
-
     var editButton = template.find('.editCompany');
     $(editButton).removeClass("hiddenItem");
-
     var currentAppId = $(template.find(".appIdLabel")).text();
-    updateApplicationName(currentAppId, $(template.find('.companyNameInput')).val())
+    var newName = $(template.find('.companyNameInput')).val();
+    updateApplicationName(currentAppId, newName);
     var currentName = template.find('.companyNameLabel'); 
-    $(currentName).contentText = $(template.find('.companyNameInput')).val()
+    $(currentName).contentText = newName;
     $(currentName).removeClass("hiddenItem");
     $(template.find('.companyNameInput')).remove();
 
+    Meteor.call("getCompanyNames", newName, function(error, results){
+        var resultObject = JSON.parse(results);
+        var dunNumber = resultObject.resultSet.hit[0].companyResults.duns;
+      Meteor.call("getCompanyData", dunNumber, function(error, results){
+        var resultObject = JSON.parse(results);
+        var companyData = {
+          duns : dunNumber,
+          yearFounded : resultObject.yearFounded,
+          name : resultObject.name,
+          income : resultObject.keyFinancials.incomeAssets.netIncome,
+          assets : resultObject.keyFinancials.incomeAssets.assets,
+          phone : resultObject.phones.phoneNumber[0].areaCode +
+                  "-"+ resultObject.phones.phoneNumber[0].phoneNumber
+        }
+        updateCompanyData(companyData, currentAppId);
+      });
+    });
   }
 
 });
