@@ -40,6 +40,12 @@ Template.company.events = ({
     //$(template.find('.companyNameInput') ).typeahead({source : DnB.get_data_async})
 
   },
+  "keyup .companyNameInput" : function (event, template){
+    
+    if(event.keyCode === 13){
+      $(template.find(".saveCompany")).click()
+    }
+  },
   "click .saveCompany" : function (event, template){
     var saveButton = template.find('.saveCompany');
     $(saveButton).addClass("hiddenItem");
