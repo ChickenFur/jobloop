@@ -12,7 +12,7 @@ Template.account.events({
     filepicker.pick({
       mimetypes: ['text/plain'],
       // extensions: ['.doc*', '.DOC*','.pdf', '.PDF'],
-      container: 'window',
+      container: 'modal',
       services:['COMPUTER', 'GMAIL', 'BOX', 'DROPBOX', 'FTP', 'GOOGLE_DRIVE', 'GITHUB', 'URL']
       },
       function(FPFile){
