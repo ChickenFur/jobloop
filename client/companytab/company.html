@@ -6,13 +6,40 @@
     {{/unless}}
 
     </label></span>
-    <div><span class="company-data">{{companyData.name}}</span></div>
-    <div>PhoneNumber: <span class="company-data">{{companyData.phone}}</span></div>
-    <div>Website: <a href={{companyData.url}}><span class="company-data">{{companyData.url}}</span></a></div>
-    <div>Address: <span class="company-data">{{companyData.address}}</span></div>
-    <div>Assets: <span class="company-data">{{companyData.assets}}</span></div>
-    <div>Most Recent Revenue Report: <span class="company-data">{{companyData.income}}</span></div>
-    <div>Year Founded: <span class="company-data">{{companyData.yearFounded}}</span></div>
+    <table class="table-condensed">
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td>{{#if companyData.name}} <span class="company-data">{{companyData.name}}</span> {{else}} N/A {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Tel</td>
+          <td>{{#if companyData.phone}} <span class="company-data">{{companyData.phone}}</span> {{else}} N/A {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Website</td>
+          <td>{{#if companyData.url}} <a href={{companyData.url}}><span class="company-data">{{companyData.url}}</span></a> {{else}} N/A {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td>{{#if companyData.address}} <span class="company-data">{{companyData.address}}</span> {{else}} N/A {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Assests</td>
+          <td>{{#if companyData.assets}} <span class="company-data">{{companyData.assets}}</span> {{else}} N/A {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Income</td>
+          <td>{{#if companyData.income}} <span class="company-data">{{companyData.income}}</span> {{else}} N/A {{/if}}</td>
+        </tr>
+        <tr>
+          <td>Founded</td>
+          <td>{{#if companyData.yearFounded}} <span class="company-data">{{companyData.yearFounded}}</span> {{else}} N/A {{/if}}</td>
+        </tr>
+      </tbody>
+    </table>
   <label class="hiddenItem appIdLabel">{{appID}}</label>
   <div>
     <button class="saveCompany btn btn-small hiddenItem">Save
