@@ -7,13 +7,15 @@ DnB = {
 var updateApplicationName = function (appId, newName){
   var userData = JobLoopUsers.findOne();
       userData.Applications.forEach(function(value, key){
-        if(value.appID === appId){
+        if(value.appID.toString() === appId){
+
           value.company = newName;
           return;
         }
       });
-  JobLoopUsers.update( {meteorUserId : this.userId},
+  var results = JobLoopUsers.update( {meteorUserId : this.userId},
                       {$set : {Applications: userData.Applications }})
+  console.log("Results: ", results);
 }
 
 Template.company.events = ({
@@ -40,7 +42,7 @@ Template.company.events = ({
     var editButton = template.find('.editCompany');
     $(editButton).removeClass("hiddenItem");
 
-    var currentAppId = $(template.find(".appIdLabel"))
+    var currentAppId = $(template.find(".appIdLabel")).text();
     updateApplicationName(currentAppId, $(template.find('.companyNameInput')).val())
     var currentName = template.find('.companyNameLabel'); 
     $(currentName).contentText = $(template.find('.companyNameInput')).val()
@@ -49,6 +51,4 @@ Template.company.events = ({
 
   }
 
-
-
-})
+});
