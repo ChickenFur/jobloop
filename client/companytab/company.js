@@ -76,7 +76,6 @@ Template.company.events = ({
           phone : resultObject.phones.phoneNumber[0].areaCode +
                   "-"+ resultObject.phones.phoneNumber[0].phoneNumber
         }
-        debugger;
         updateCompanyData(companyData, currentAppId);
       });
     });
