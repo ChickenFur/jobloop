@@ -1,41 +1,54 @@
 DnB = {
   get_data_async : function (query, callback){
-    results = Meteor.call("getCompanyData", query)
+    var results = Meteor.call("getCompanyData", query)
 
   }
+}
+var updateApplicationName = function (appId, newName){
+  var userData = JobLoopUsers.findOne();
+      userData.Applications.forEach(function(value, key){
+        if(value.appID.toString() === appId){
+
+          value.company = newName;
+          return;
+        }
+      });
+  var results = JobLoopUsers.update( {meteorUserId : this.userId},
+                      {$set : {Applications: userData.Applications }})
+  console.log("Results: ", results);
 }
 
 Template.company.events = ({
   "click .editCompany" : function (event, template){
    
-    currentName = template.find('.companyNameLabel')
-    currentNameVal = currentName.textContent;
-    inputTag = "<input class='companyNameInput' value='"+  
+    var currentName = template.find('.companyNameLabel')
+    var currentNameVal = currentName.textContent;
+    var inputTag = "<input class='companyNameInput' value='"+  
                     currentNameVal + "'></input>"
-    parent = currentName.parentElement;
+    var parent = currentName.parentElement;
     $(currentName).addClass("hiddenItem");
     $(parent).append(inputTag);
-    editButton = template.find('.editCompany');
+    var editButton = template.find('.editCompany');
     $(editButton).addClass("hiddenItem");
-    saveButton = template.find('.saveCompany');
+    var saveButton = template.find('.saveCompany');
     $(saveButton).removeClass("hiddenItem");
     $(template.find('.companyNameInput') ).typeahead({source : DnB.get_data_async})
 
   },
   "click .saveCompany" : function (event, template){
-    saveButton = template.find('.saveCompany');
+    var saveButton = template.find('.saveCompany');
     $(saveButton).addClass("hiddenItem");
 
-    editButton = template.find('.editCompany');
+    var editButton = template.find('.editCompany');
     $(editButton).removeClass("hiddenItem");
 
-    currentName = template.find('.companyNameLabel')
+    var currentAppId = $(template.find(".appIdLabel")).text();
+    updateApplicationName(currentAppId, $(template.find('.companyNameInput')).val())
+    var currentName = template.find('.companyNameLabel'); 
     $(currentName).contentText = $(template.find('.companyNameInput')).val()
     $(currentName).removeClass("hiddenItem");
     $(template.find('.companyNameInput')).remove();
 
   }
 
-
-
-})
+});

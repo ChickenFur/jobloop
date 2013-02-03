@@ -7,3 +7,19 @@
 .hiddenItem{
   display:none;
 }
+
+.companyContainer{
+	float:left;
+	width:45%;
+	padding:15px;
+	background-color: #fff;
+}
+
+.companyTitle{
+	width:60%;
+	font-size:115%;
+}
+
+.companyNameLabel{
+	font-size:115%;
+}
