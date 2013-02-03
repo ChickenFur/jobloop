@@ -1,5 +1,7 @@
 Meteor.Router.add({
-    '/': 'home'
+    '/': 'home',
+    '/banner': 'slideBanner',
+    '/account': 'account'
   });
 
   Template.home.events({

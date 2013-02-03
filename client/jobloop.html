@@ -2,6 +2,7 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,600' rel='stylesheet' type='text/css'>
   <title>Job Loop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
   <div class="container">
   	{{> testButtons}}
 	<div class="row-fluid">
-	  	  
+
 	  <div class="span12">
 	    <div class="banner">
 	    	<table class="bannerTable">
@@ -72,7 +73,7 @@
 		  </ul>
 
 		  <div class="tab-content">
-		  	<div class="tab-pane" id="tab{{appID}}A">
+		  	<div class="tab-pane active" id="tab{{appID}}A">
 		  		{{> company}}
 		    </div>
 		    <div class="tab-pane" id="tab{{appID}}B">
@@ -111,7 +112,7 @@
 
 		<div class="span6 topbarBox" id="statsTopbar">
 			<p>Stats</p>
-			
+
 		</div>
 	</div>
 </template>
@@ -124,8 +125,11 @@
 			    <ul class="nav">
 			      <li class="active"><a href="#"><i class="icon-envelope-alt"></i></a></li>
 			      <li><a href="#"><i class="icon-calendar"></i></a></li>
-			      <li><a href="#"><i class="icon-bell-alt"></i></a></li>
-			      <li><a href="#">{{loginButtons}}</a></li>
+            <li><a href="#"><i class="icon-bell-alt"></i></a></li>
+            {{#if currentUser}}
+			         <li><a href="/account"><i class="icon-cog"></i></a></li>
+            {{/if}}
+			      <li><a href="#">{{loginButtons align="right"}}</a></li>
 			    </ul>
 		  </div>
 		</div>

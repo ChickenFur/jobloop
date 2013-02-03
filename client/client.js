@@ -1,6 +1,10 @@
 Meteor.autosubscribe(function (){
-  Meteor.subscribe("user-data", Meteor.userId())  
-})
+  Meteor.subscribe("user-data", Meteor.userId());
+});
+
+Meteor.startup( function() {
+  filepicker.setKey("AjKmJWkLsTMSgLKdyPJbrz");
+});
 
 Template.applications.helpers({
   application : function(){
@@ -21,7 +25,7 @@ Template.applications.helpers({
 
   decisions: function(){
     return "accepted/rejected";
-  } 
+  }
 });
 
 Template.applications.events({
@@ -50,7 +54,7 @@ Template.topbar.events({
   },
 
   'click .icon-star': function(){
-    
+
   }
 });
 Template.testButtons.events({
@@ -85,5 +89,30 @@ Template.applications.Applications = function(){
 //       <p>This is where the application notes will go.</p>
 //       </div>
 
+// User account page template
 
+Template.account.username = function(){
+  return Meteor.user().profile.name;
+};
+
+Template.account.events({
+  'click .upload-resume': function(evt){
+    filepicker.pick({
+      extensions: ['.doc*', '.DOC*','.pdf', '.PDF'],
+      container: 'window',
+      services:['COMPUTER', 'GMAIL', 'BOX', 'DROPBOX', 'FTP', 'GOOGLE_DRIVE', 'GITHUB', 'URL']
+      },
+      function(FPFile){
+        // console.log(JSON.stringify(FPFile));
+        var url = FPFile.url;
+        var filename = FPFile.filename;
+        var user = JobLoopUsers.findOne();
+        user.resume = url;
+      },
+      function(FPError){
+        console.log(FPError.toString());
+      }
+    );
+  }
+});
 
